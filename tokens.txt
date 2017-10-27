@@ -21,29 +21,24 @@ Oracle
 European Computer Manufacturer's Association
 after
 extracting
-.jar
-file
+.jar file
 ,
 same
 directory
 as
-.class
-file
+.class file
 work
 within
-.jar
-file
+.jar file
 and
 my
-HTML
-page
+HTML page
 .
 I
 info
 in
 my
-HTML
-page
+HTML page
 unrelated
 lineages.
 Brendan Eich
@@ -56,35 +51,29 @@ James Gosling
 et.
 al
 .
-HTTP GET
-requests
+HTTP GET requests
 .
 You
 want
 to
 intercept
 on
-HTTP POST
-requests
+HTTP POST requests
 .
 That
 's
 Usually
 ,
-HTTP GET
-requests
+HTTP GET requests
 a
-HTTP GET
-request
+HTTP GET request
 .
-HTTP POST
-requests
+HTTP POST requests
 are
 not
 submitted
 a
-POST
-form
+POST form
 on
 an
 URL
@@ -93,18 +82,15 @@ beforehand
 which
 a
 submitted
-HTML
-form
+HTML form
 and
 is
 presented
 as
-HTML
-form
+HTML form
 the
 forwarded
-JSP
-page
+JSP page
 .
 unrelated
 lineages.
@@ -119,9 +105,7 @@ et.
 al
 .
 as
-servlet
-instance
-variables
+servlet instance variables
 about
 basic
 Java SE API
@@ -161,15 +145,21 @@ James Gosling
 et.
 al
 .
-Eclipse v3.5 Galileo
+Eclipse v3.5
+Galileo
 to
 re-run
-A Java Runtime Environment JRE
+A
+Java Runtime Environment
+JRE
 or
-Java Development Kit JDK
+Java Development Kit
+JDK
 to
 run
-Eclipse. No Java Virtual Machine
+Eclipse.
+No
+Java Virtual Machine
 was
 found
 after
