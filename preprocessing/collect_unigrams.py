@@ -33,7 +33,6 @@ def main():
     ug_names = Unigrams()
     ug_names.fill_from_articles_labels(cfg.ARTICLES_FILEPATH, ["PER"], verbose=True)
     ug_names.write_to_file(cfg.UNIGRAMS_PERSON_FILEPATH)
-
     print("Finished.")
 
 # ---------------

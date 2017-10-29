@@ -9,6 +9,7 @@ from collections import Counter
 import config as cfg
 from nltk.tokenize import word_tokenize
 
+
 def split_to_chunks(of_list, chunk_size):
     """Splits a list to smaller chunks.
     Args:
@@ -19,8 +20,41 @@ def split_to_chunks(of_list, chunk_size):
     """
     assert of_list is not None
 
-    for i in range(0, len(of_list), chunk_size):
-        yield of_list[i:i + chunk_size]
+    # for i in range(0, len(of_list), chunk_size):
+    #     yield of_list[i:i + chunk_size]
+    separate_index = []
+    for i in range(len(of_list)):
+        if of_list[i].word == '.':
+            separate_index.append(i)
+    segments = zip([-1] + separate_index[:-2], separate_index[1:] + [len(of_list)-1])
+    for segment in segments:
+        r_list = of_list[segment[0]+1:segment[1]+1]
+        pr_str = ''
+        for t in r_list:
+            pr_str += " " + t.word
+        print(pr_str)
+        yield of_list[segment[0]+1:segment[1]+1]
+
+    # while i < len(of_list):
+    #     j = i
+    #     while j < len(of_list):
+    #         if of_list[j].word == '.':
+    #             start = i
+    #             i = j+1
+    #             pr_str = ''
+    #             r_list = of_list[start:j+1]
+    #             for t in r_list:
+    #                 pr_str += " " + t.word
+    #             print(pr_str)
+    #             yield of_list[start:j+1]
+    #             break
+    #         else:
+    #             j += 1
+    #     if j == len(of_list):
+    #         ori_i = i
+    #         i = j
+    #         yield of_list[ori_i:j]
+
 
 def load_articles(filepath, start_at=0):
     """Loads all articles (documents) from a corpus.
@@ -84,6 +118,7 @@ def load_windows(articles, window_size, features=None, every_nth_window=1,
                         yield window
                     processed_windows += 1
 
+
 def generate_examples(windows, nb_append=None, nb_skip=0, verbose=True):
     """Generates example pairs of feature lists (one per token) and labels.
 
@@ -108,7 +143,6 @@ def generate_examples(windows, nb_append=None, nb_skip=0, verbose=True):
         else:
             # chain of labels (list of strings)
             labels = window.get_labels()
-            print(labels)
             # chain of features (list of lists of strings)
             feature_values_lists = []
             for word_idx in range(len(window.tokens)):

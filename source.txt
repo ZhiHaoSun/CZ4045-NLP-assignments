@@ -20,7 +20,7 @@ The two languages are entirely distinct.
 
 Java is to JavaScript as ham is to hamster
 
-JavaScript is an object-oriented scripting language that allows you to create dynamic HTML pages, allowing you to process input data and maintain data, usually within the browser.
+JavaScript is an object-oriented scripting language that allows you to create dynamic HTML/MISC pages/MISC, allowing you to process input data and maintain data, usually within the browser.
 
 Java is a programming language, core set of libraries, and virtual machine platform that allows you to create compiled programs that run on nearly every platform, without distribution of source code in its raw form or recompilation.
 
@@ -51,10 +51,10 @@ Javascript is dynamically typed, interpreted, and runs in a browser. It also has
 They are also somewhat similar in syntax, but that's about it.
 
 Don't be confused with name..
-Java was created at Sun/ORG Microsystems/ORG (now Oracle).
+Java was created at Sun/MISC Microsystems/MISC (now Oracle).
 But, JavaScript was created at Netscape (now Mozilla) in the early days of the Web, and technically, “Java-Script” is a trademark licensed from Sun Microsystems used to describe
 Netscape’s implementation of the language. Netscape submitted the
-language for standardization to ECMA (European/ORG Computer/ORG Manufacturer's/ORG Association/ORG)
+language for standardization to ECMA (European/MISC Computer/MISC Manufacturer's/MISC Association/MISC)
 and because of trademark issues, the standardized version of the language
 was stuck with the awkward name “ECMAScript.” For the same trademark reasons,
 Microsoft’s version of the language is formally known as “JScript.” In practice, just
@@ -62,9 +62,9 @@ about everyone calls the language JavaScript. The real name is “ECMAScript”.
 
 Both are fully different languages!!!
 
-Practically every PC in the world sells with at least one JavaScript interpreter installed on it.
+Practically every PC in the world sells with at least one JavaScript/MISC interpreter/MISC installed on it.
 
-Most (but not "practically all") PCs have a Java VM installed.
+Most (but not "practically all") PCs have a Java/MISC VM/MISC installed.
 
 A Re-Introduction to Javascript by the Mozilla team (they make Firefox) should explain it.
 
@@ -80,7 +80,7 @@ However, I do not know how to use that correctly to my advantage.
 
 Place the file in directory structure matching your package name (after extracting .jar/MISC file/MISC, it should be in the same directory as .class/MISC file/MISC), then access it using getClass().getResourceAsStream("file.txt")
 
-Place the file at the root (after extracting .jar file, it should be in the root), then access it using Thread.currentThread().getContextClassLoader().getResourceAsStream("file.txt")
+Place the file at the root (after extracting .jar/MISC file/MISC, it should be in the root), then access it using Thread.currentThread().getContextClassLoader().getResourceAsStream("file.txt")
 
 The first option may not work when jar is used as a plugin.
 

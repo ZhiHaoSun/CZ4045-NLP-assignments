@@ -14,6 +14,7 @@ from model.unigrams import Unigrams
 # All capitalized constants come from this file
 import config as cfg
 
+
 def create_features(verbose=True):
     """This method creates all feature generators.
     The feature generators will be used to convert windows of tokens to their string features.
@@ -73,6 +74,7 @@ def create_features(verbose=True):
     ]
     return result
 
+
 class StartsWithUppercaseFeature(object):
     """Generates a feature that describes, whether a given token starts with an uppercase letter."""
     def __init__(self):
@@ -93,6 +95,7 @@ class StartsWithUppercaseFeature(object):
         for token in window.tokens:
             result.append(["swu=%d" % (int(token.word[:1].istitle()))])
         return result
+
 
 class TokenLengthFeature(object):
     """Generates a feature that describes the character length of a token."""
@@ -118,6 +121,7 @@ class TokenLengthFeature(object):
         for token in window.tokens:
             result.append(["l=%d" % (min(len(token.word), self.max_length))])
         return result
+
 
 class ContainsDigitsFeature(object):
     """Generates a feature that describes, whether a token contains any digit."""
@@ -358,6 +362,7 @@ class SuffixFeature(object):
             suffix = re.sub(r"[^a-zA-ZäöüÄÖÜß\.\,\!\?]", "#", token.word[-3:])
             result.append(["sf=%s" % (suffix)])
         return result
+
 
 class POSTagFeature(object):
     """Generates a feature that describes the Part Of Speech tag of the word."""

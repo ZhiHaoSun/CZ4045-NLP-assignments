@@ -1,224 +1,238 @@
+JavaScript
+is
+an
+object-oriented
+scripting
+language
+that
+allows
+you
+to
+create
+dynamic
+HTML pages
+,
+allowing
+you
+to
+process
+input
+data
+and
+maintain
+data
+,
+usually
+within
+the
+browser
+.
+They
+are
+independent
+languages
+with
 unrelated
-lineages.
+lineages
+.
 Brendan Eich
 created
+Javascript
+originally
+at
+Netscape
+.
+Brendan Eich
+created
+Javascript
+originally
+at
+Netscape
+.
+It
+was
+initially
+called
+Mocha
+.
+It
+was
+initially
+called
+Mocha
+.
+The
+choice
+of
+Javascript
+as
+a
+name
+was
+a
+nod
+,
+if
+you
+will
+,
+to
+the
+then
+ascendant
+Java
+programming
+language
+,
+developed
+at
+Sun
 by
 Patrick Naughton
 ,
 James Gosling
 ,
-et.
+et
+.
+The
+choice
+of
+Javascript
+as
+a
+name
+was
+a
+nod
+,
+if
+you
+will
+,
+to
+the
+then
+ascendant
+Java
+programming
+language
+,
+developed
+at
+Sun
+by
+Patrick Naughton
+,
+James Gosling
+,
+et
+.
 al
 .
 Java
 was
 created
 at
-Sun Microsystems
+Sun
+Microsystems
 now
 Oracle
 .
-European Computer Manufacturer's Association
+language
+for
+standardization
+to
+ECMA European Computer Manufacturer's Association
+Practically
+every
+PC
+in
+the
+world
+sells
+with
+at
+least
+one
+JavaScript
+interpreter
+installed
+on
+it
+.
+Most
+but
+not
+``
+practically
+all
+''
+PCs
+have
+a
+Java
+VM
+installed
+.
+Place
+the
+file
+in
+directory
+structure
+matching
+your
+package
+name
 after
 extracting
 .jar
 file
 ,
+it
+should
+be
+in
+the
 same
 directory
 as
 .class
 file
-work
-within
+,
+then
+access
+it
+using
+getClass
+.getResourceAsStream
+``
+file.txt
+''
+Place
+the
+file
+at
+the
+root
+after
+extracting
 .jar
 file
-and
-my
-HTML
-page
-.
-I
-info
-in
-my
-HTML
-page
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
 ,
-James Gosling
-,
-et.
-al
-.
-HTTP GET
-requests
-.
-You
-want
-to
-intercept
-on
-HTTP POST
-requests
-.
-That
-'s
-Usually
-,
-HTTP GET
-requests
-a
-HTTP GET
-request
-.
-HTTP POST
-requests
-are
-not
-submitted
-a
-POST
-form
-on
-an
-URL
-beforehand
-,
-which
-a
-submitted
-HTML
-form
-and
-is
-presented
-as
-HTML
-form
-the
-forwarded
-JSP
-page
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-as
-servlet
-instance
-variables
-about
-basic
-Java SE API
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-Eclipse v3.5 Galileo
-to
-re-run
-A Java Runtime Environment JRE
-or
-Java Development Kit JDK
-to
-run
-Eclipse. No Java Virtual Machine
-was
-found
-after
-I
-have
-Windows 7 x64
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-I
-'m
-running
-Windows 7 64-bit
-and
-I
-had
-the
-32-bit JRE
-installed
-.
-I
-downloaded
-Eclipse 64-bit
-which
-looks
-for
-a
-64-bit JRE
-the
-64-bit JRE
 it
-threw
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
+should
+be
+in
+the
+root
 ,
-James Gosling
-,
-et.
-al
+then
+access
+it
+using
+Thread.currentThread
+.getContextClassLoader
+.getResourceAsStream
+``
+file.txt

@@ -4,6 +4,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from collections import Counter, OrderedDict
 from model.datasets import load_articles
 
+
 class Unigrams(object):
     """Class to handle the contents of a file containing unigrams."""
     def __init__(self, filepath=None, skip_first_n=0, max_count_words=None):
