@@ -118,7 +118,7 @@ You can if necessary also "hide" the login.jsp in /WEB-INF/login.jsp so that the
 
 They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al.
 
-(and update the same line in doPost() accordingly)
+(and update the same line in doPost()/MISC accordingly)
 
 That said, I am not sure if it is just playing around and shooting in the dark, but the code which you posted doesn't look good (such as using compareTo() Iinstead of equals() and digging in the parameternames instead of just using getParameter() and the id and password seems to be declared as servlet/MISC instance/MISC variables/MISC — which is NOT threadsafe). So I would strongly recommend to learn a bit more about basic Java/MISC SE/MISC API/MISC using the Oracle tutorials (check the chapter "Trails Covering the Basics") and how to use JSP/Servlets the right way using those tutorials.
 
