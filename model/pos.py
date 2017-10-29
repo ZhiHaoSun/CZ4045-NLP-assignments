@@ -53,7 +53,6 @@ class PosTagger(object):
                 if random.randint(1, 100) <= self.cache_synch_prob:
                     self.synchronize_cache()
 
-                print(tagged)
                 return tagged
 
     def tag_uncached(self, tokens):

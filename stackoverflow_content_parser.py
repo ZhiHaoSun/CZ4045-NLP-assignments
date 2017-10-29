@@ -42,9 +42,10 @@ def process(content):
     with lock:
         try:
             output_file = open(output_path, 'a')
+            output_file.write("\n\n\n\n")
             for post in posts:
                 for post_content in post.find_all('p'):
-                    output_file.write(post_content.text + "\n\n")
+                    output_file.write(post_content.text + "\n\n\n")
         except Exception, e:
                 print str(e)
 
