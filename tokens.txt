@@ -1,212 +1,62 @@
+unrelated
+lineages
+.
 Brendan Eich
-created
+developed
+at
+Sun
 by
 Patrick Naughton
 ,
 James Gosling
 ,
-et.
-al
-.
 Java
 was
 created
 at
-Sun Microsystems
+Sun
+Microsystems
 now
 Oracle
 .
 European Computer Manufacturer's Association
 after
 extracting
-.jar file
+.jar
+file
 ,
 same
 directory
 as
-.class file
+.class
+file
+way
 work
 within
-.jar file
-and
-my
-HTML page
-.
-I
-info
+.jar
+file
 in
 my
 HTML page
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
 .
-HTTP GET requests
+this
+info
+in
+my
+HTML
+page
 .
-You
-want
-to
-intercept
-on
-HTTP POST requests
-.
-That
-'s
-Usually
-,
-HTTP GET requests
-a
-HTTP GET request
-.
-HTTP POST requests
-are
-not
-submitted
-a
-POST form
-on
-an
-URL
-beforehand
-,
-which
-a
-submitted
-HTML form
-and
-is
-presented
-as
-HTML form
-the
-forwarded
-JSP page
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-as
-servlet instance variables
-about
-basic
-Java SE API
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-Eclipse v3.5
-Galileo
-to
-re-run
-A
-Java Runtime Environment
-JRE
-or
-Java Development Kit
-JDK
-to
-run
-Eclipse.
-No
-Java Virtual Machine
-was
-found
-after
-I
-have
-Windows 7 x64
-unrelated
-lineages.
-Brendan Eich
-created
-by
-Patrick Naughton
-,
-James Gosling
-,
-et.
-al
-.
-I
-'m
-running
-Windows 7 64-bit
-and
-I
-had
-the
-32-bit JRE
-installed
-.
-I
-downloaded
-Eclipse 64-bit
-which
-looks
-for
-a
-64-bit JRE
-the
-64-bit JRE
+Is
 it
-threw
+possible
 unrelated
-lineages.
+lineages
+.
 Brendan Eich
-created
+developed
+at
+Sun
 by
 Patrick Naughton
 ,
 James Gosling
-,
-et.
-al

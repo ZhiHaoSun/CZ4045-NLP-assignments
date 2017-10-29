@@ -51,10 +51,10 @@ Javascript is dynamically typed, interpreted, and runs in a browser. It also has
 They are also somewhat similar in syntax, but that's about it.
 
 Don't be confused with name..
-Java was created at Sun/ORG Microsystems/ORG (now Oracle).
+Java was created at Sun/MISC Microsystems/MISC (now Oracle).
 But, JavaScript was created at Netscape (now Mozilla) in the early days of the Web, and technically, “Java-Script” is a trademark licensed from Sun Microsystems used to describe
 Netscape’s implementation of the language. Netscape submitted the
-language for standardization to ECMA (European/ORG Computer/ORG Manufacturer's/ORG Association/ORG)
+language for standardization to ECMA (European/MISC Computer/MISC Manufacturer's/MISC Association/MISC)
 and because of trademark issues, the standardized version of the language
 was stuck with the awkward name “ECMAScript.” For the same trademark reasons,
 Microsoft’s version of the language is formally known as “JScript.” In practice, just
