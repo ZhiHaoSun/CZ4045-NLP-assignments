@@ -92,7 +92,7 @@ def test_on_articles(identifier, articles, nb_append=None):
 
     # create window generator
     print("Loading windows...")
-    windows = load_windows(articles, cfg.WINDOW_SIZE, feature_generators, only_labeled_windows=True)
+    windows = load_windows(articles, cfg.WINDOW_SIZE, feature_generators, only_labeled_windows=False)
 
     # load feature lists and label lists (X, Y)
     # this may take a while
