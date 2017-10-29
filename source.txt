@@ -1,3 +1,22 @@
+But, JavaScript was created at Netscape (now Mozilla) in the early days of the Web, and technically, “Java-Script” is a trademark licensed from Sun Microsystems used to describe
+
+JavaScript is an object-oriented scripting language that allows you to create dynamic HTML pages, allowing you to process input data and maintain data, usually within the browser.
+
+While the two have similar names, they are really two completely different programming languages/models/platforms, and are used to solve completely different sets of problems.
+
+They are independent languages with unrelated lineages. Brendan Eich created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick Naughton, James Gosling, et. al.
+
+Netscape’s implementation of the language. Netscape submitted the language for standardization to ECMA (European Computer Manufacturer's Association)
+
+Practically every PC in the world sells with at least one JavaScript interpreter installed on it.
+
+If you are using spring, then you can use the the following method to read file from src/main/resources:
+
+Place the file at the root (after extracting .jar file, it should be in the root), then access it using Thread.currentThread().getContextClassLoader().getResourceAsStream("file.txt")
+
+JavaScript is an object-oriented scripting language that allows you to create dynamic HTML pages, allowing you to process input data and maintain data, usually within the browser.
+
+You should use doGet() when you want to intercept on HTTP GET requests. You should use doPost() when you want to intercept on HTTP POST requests. That's all. Do not port the one to the other or vice versa (such as in Netbeans ' unfortunate auto-generated processRequest() method). This makes no utter sense.
 What's the difference between JavaScript and Java ?
 
 Java and Javascript are similar like Car and Carpet are similar.

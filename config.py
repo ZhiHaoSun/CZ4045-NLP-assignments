@@ -104,7 +104,7 @@ MAX_ITERATIONS = None
 COUNT_WINDOWS_TRAIN = 50000
 
 # Number of windows to use during testing
-COUNT_WINDOWS_TEST = 11
+COUNT_WINDOWS_TEST = 0
 
 # Label for any word that has no named entity label
 NO_NE_LABEL = "O"

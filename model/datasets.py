@@ -26,34 +26,9 @@ def split_to_chunks(of_list, chunk_size):
     for i in range(len(of_list)):
         if of_list[i].word == '.':
             separate_index.append(i)
-    segments = zip([-1] + separate_index[:-2], separate_index[1:] + [len(of_list)-1])
+    segments = zip([-1] + separate_index, separate_index + [len(of_list)-1])
     for segment in segments:
-        r_list = of_list[segment[0]+1:segment[1]+1]
-        pr_str = ''
-        for t in r_list:
-            pr_str += " " + t.word
-        print(pr_str)
         yield of_list[segment[0]+1:segment[1]+1]
-
-    # while i < len(of_list):
-    #     j = i
-    #     while j < len(of_list):
-    #         if of_list[j].word == '.':
-    #             start = i
-    #             i = j+1
-    #             pr_str = ''
-    #             r_list = of_list[start:j+1]
-    #             for t in r_list:
-    #                 pr_str += " " + t.word
-    #             print(pr_str)
-    #             yield of_list[start:j+1]
-    #             break
-    #         else:
-    #             j += 1
-    #     if j == len(of_list):
-    #         ori_i = i
-    #         i = j
-    #         yield of_list[ori_i:j]
 
 
 def load_articles(filepath, start_at=0):
