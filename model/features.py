@@ -2,7 +2,7 @@
 """
 Contains:
     1. Various classes (feature generators) to convert windows (of words/tokens) to feature values.
-       Each feature value is a string, e.g. "starts_with_uppercase=1", "brown_cluster=123".
+       Each feature value is a string, e.g. "starts_with_uppercase=1".
     2. A method to create all feature generators.
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
@@ -379,7 +379,7 @@ class POSTagFeature(object):
             Each list can contain any number of features (including 0).
             Each feature is a string.
         """
-        pos_tags = self.stanford_pos_tag(window)
+        pos_tags = self.pos_tag(window)
         result = []
         
         # catch stupid problems with stanford POS tagger and unicode characters
@@ -402,7 +402,7 @@ class POSTagFeature(object):
 
         return result
 
-    def stanford_pos_tag(self, window):
+    def pos_tag(self, window):
         """Converts a Window (list of tokens) to their POS tags.
         Args:
             window: Window object containing the token list to POS-tag.

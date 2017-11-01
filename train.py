@@ -31,29 +31,6 @@ def main():
 
 def train(args):
     """Main training method.
-
-    Does the following:
-        1. Create a new pycrfsuite trainer object. We will have to add feature chains and label
-           chains to that object and then train on them.
-        2. Creates the feature (generators). A feature generator might e.g. take in a window
-           of N tokens and then return ["upper=1"] for each token that starts with an uppercase
-           letter and ["upper=0"] for each token that starts with a lowercase letter. (Lists,
-           because a token can be converted into multiple features by a single feature generator,
-           e.g. the case for LDA as a token may be part of multiple topics.)
-        3. Loads windows from the corpus. Each window has a fixed (maximum) size in tokens.
-           We only load windows that contain at least one label (named entity), so that we don't
-           waste too much time on windows without any label.
-        4. Generate features for each chain of tokens (window). That's basically described in (2.).
-           Each chain of tokens from a window will be converted to a list of lists.
-           One list at the top level representing each token, then another list for the feature
-           values. E.g.
-             [["w2v=123", "bc=742", "upper=0"], ["w2v=4", "bc=12", "upper=1", "lda4=1"]]
-           for two tokens.
-        5. Add feature chains and label chains to the trainer.
-        6. Train. This may take several hours for 20k windows.
-
-    Args:
-        args: Command line arguments as parsed by argparse.ArgumentParser.
     """
     trainer = pycrfsuite.Trainer(verbose=True)
 
@@ -71,9 +48,6 @@ def train(args):
     # Add chains of features (each list of lists of strings)
     # and chains of labels (each list of strings)
     # to the trainer.
-    # This may take a long while, especially because of the lengthy POS tagging.
-    # POS tags and LDA results are cached, so the second run through this part will be significantly
-    # faster.
     print("Adding example windows (up to max %d)..." % (cfg.COUNT_WINDOWS_TRAIN))
 
     examples = generate_examples(windows, nb_append=cfg.COUNT_WINDOWS_TRAIN,
