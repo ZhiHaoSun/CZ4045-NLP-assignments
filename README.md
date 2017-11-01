@@ -33,33 +33,36 @@ Run `pip2 install -r requirements.txt` to handle all dependency issues.
 * [Stanford CoreNLP](http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip) (used for parsing sentences)
 
 ## Corpus
-A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities of the form `word/LABEL`.
-Example (each article shortened, german):
+A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities with length > 1 of the form `word/LABEL`.
+Example:
 
-> Ang/PER Lee/PER ( $foreign_language ; * 23 . Oktober 1954 in Pingtung/LOC , Taiwan/LOC ) ist ein US-amerikanisch-taiwanischer Filmregisseur , Drehbuchautor und Produzent . Er ist ...
-> Actinium ( latinisiert von griechisch ακτίνα , aktína „ Strahl “ ) ist ein radioaktives chemisches Element mit dem Elementsymbol Ac und der Ordnungszahl 89 . Das Element ...
-> Anschluss ist in der Soziologie ein Fachbegriff aus der Systemtheorie von Niklas/PER Luhmann/PER und bezeichnet die in einer sozialen Begegnung auf eine Selektion der ...
+> They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al ...
 
-(*Note*: Github markdown eats up the linebreak after every `...`.)
-Notice the `/PER` and `/LOC` labels. BIO codes will automatically be normalized to non-BIO codes (e.g. `B-PER` becomes `PER` or `I-LOC` becomes `LOC`).
+Notice the `/MISC` labels.
 
 *Note*: You can create a large corpus with annotated names of people from the Wikipedia as names (in Wikipedia articles) are often linked with articles about people, which are identifiable. There are some papers about that.
 
 # Usage
-
-1. Create a large annotated corpus with the labels `PER`, `LOC`, `ORG`, `MISC` as described above at `Corpus`. You can change these labels in `config.py`, but `PER` is required.
-2. Install all requirements in requirements.txt
-3. Change all constants (specifically the filepaths) in `config.py` to match your settings. You will have to change `ARTICLES_FILEPATH` (path to your corpus file), `COUNT_WINDOWS_TRAIN` (number of examples to train on, might be too many for your corpus), `COUNT_WINDOWS_TEST` (number of examples to test on, might be too many for your corpus), `LABELS` (if you don't use PER, LOC, ORG, MISC as labels, PER though is a requirement).
-6. Run `python -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
-7. Run `python train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`. This will likely run for several hours (it did when tested on 20,000 example windows). Notice that the feature generation will be very slow at the first run, as POS tagging and (to a lesser degree) LDA tagging take a lot of time.
-8. Run `python predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000). This also requires feature generation and will therefore also be slow (at the first run).
+(Data are prepared already, so you can jump to step 4 directly.)
+1. Run first crawler `python2 stackoverflow_crawler.py` to generate file
+ `stackoverflow_questions`. This file contains a list of links to hot StackOverflow questions.
+2. Run second crawler `python2 stackoverflow_content_parser.py` to fetch post details of questions in "stackover_questions" file. Result will be stored in `stackoverflow_content` file. 
+3. Prepare annotated data. Data is stored in `source.txt`.
+4. Install all requirements in requirements.txt
+5. (Optional) Change all constants (specifically the filepaths) in `config.py` to match your settings. You will have to change `ARTICLES_FILEPATH` (path to your corpus file), `COUNT_WINDOWS_TRAIN` (number of examples to train on, might be too many for your corpus), `COUNT_WINDOWS_TEST` (number of examples to test on, might be too many for your corpus), `LABELS`.
+6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
+7. Run `python2 train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`.
+8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000).
+Generated tokens will be stored in `tokens.txt`.
 9. Run `python stemming/stemming.py` to get the frequent words before and after stemming. It should output the top 20 words before stemming and their counts, and top 20 words after stemming with their counts and original words.
-10. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
-
+10. Application 1: statistics on fetched data and do sentiment statistics.
+Run `python2 questions_stats.py`. Top frequent sentiment words will be stored in `frequent_senti_words.txt` file.
+11. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
+12. Application 3: Grammar parsing and checking. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
 
 # Score
 
-Results on the Germeval 2014 NER corpus:
+Results on our annotated corpus:
 
 |                    | precision |   recall | f1-score |  support|
 |--------------------|-----------|----------|----------|---------|
