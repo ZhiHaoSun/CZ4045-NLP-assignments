@@ -3,11 +3,6 @@
     File to collect all unigrams and all name-unigrams (label PER) from a corpus file.
     The corpus file must have one document/article per line. The words must be labeled in the
     form word/LABEL.
-    Example file content:
-        Yestarday John/PER Doe/PER said something amazing.
-        Washington/LOC D.C./LOC is the capital of the U.S.
-        The foobird is a special species of birds. It's commonly found on mars.
-        ...
 
     Execute via:
         python -m preprocessing/collect_unigrams
