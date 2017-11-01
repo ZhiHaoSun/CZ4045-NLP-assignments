@@ -54,8 +54,7 @@ def create_features(verbose=True):
 
     # Load the wrapper for the stanford POS tagger
     print_if_verbose("Loading POS-Tagger...")
-    pos = PosTagger(cfg.STANFORD_POS_JAR_FILEPATH, cfg.STANFORD_MODEL_FILEPATH,
-                    cache_filepath=cfg.POS_TAGGER_CACHE_FILEPATH)
+    pos = PosTagger(cache_filepath=cfg.POS_TAGGER_CACHE_FILEPATH)
 
     # create feature generators
     result = [
