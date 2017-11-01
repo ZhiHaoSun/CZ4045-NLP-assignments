@@ -32,15 +32,12 @@ Run `pip2 install -r requirements.txt` to handle all dependency issues.
 * [nltk](http://www.nltk.org/) (used for its wrapper of the stanford pos tagger)
 
 ## Corpus
-A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities of the form `word/LABEL`.
-Example (each article shortened, german):
+A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities with length > 1 of the form `word/LABEL`.
+Example:
 
-> Ang/PER Lee/PER ( $foreign_language ; * 23 . Oktober 1954 in Pingtung/LOC , Taiwan/LOC ) ist ein US-amerikanisch-taiwanischer Filmregisseur , Drehbuchautor und Produzent . Er ist ...
-> Actinium ( latinisiert von griechisch ακτίνα , aktína „ Strahl “ ) ist ein radioaktives chemisches Element mit dem Elementsymbol Ac und der Ordnungszahl 89 . Das Element ...
-> Anschluss ist in der Soziologie ein Fachbegriff aus der Systemtheorie von Niklas/PER Luhmann/PER und bezeichnet die in einer sozialen Begegnung auf eine Selektion der ...
+> They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al ...
 
-(*Note*: Github markdown eats up the linebreak after every `...`.)
-Notice the `/PER` and `/LOC` labels. BIO codes will automatically be normalized to non-BIO codes (e.g. `B-PER` becomes `PER` or `I-LOC` becomes `LOC`).
+Notice the `/MISC` labels.
 
 *Note*: You can create a large corpus with annotated names of people from the Wikipedia as names (in Wikipedia articles) are often linked with articles about people, which are identifiable. There are some papers about that.
 
