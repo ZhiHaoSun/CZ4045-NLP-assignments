@@ -13,3 +13,4 @@ scipy==0.19.1
 six==1.11.0
 smart-open==1.5.3
 urllib3==1.22
+afinn=0.1
