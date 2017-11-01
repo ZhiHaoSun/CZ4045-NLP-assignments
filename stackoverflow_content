@@ -82,7 +82,7 @@ simple usage:
 and result will be 
 
 
-EDIT: as pointed out by @mmyers, this method doesn't work on input that contains substrings corresponding to bytes with the high bit set ("80" - "FF"). The explanation is at Bug ID: 6259307 Byte.parseByte not working as advertised in the SDK Documentation.
+EDIT: as pointed out by @mmyers, this method doesn't work on input that contains substrings corresponding to bytes with the high bit set ("80" - "FF").The explanation is at Bug ID: 6259307 Byte.parseByte not working as advertised in the SDK Documentation.
 
 
 The Code presented by Bert Regelink simply does not work. 

@@ -43,11 +43,8 @@ def main():
     # test on corpus set in ARTICLES_FILEPATH
     if args.mycorpus:
         test_on_mycorpus(args)
-    # test on germeval corpus
-    if args.germeval:
-        test_on_germeval(args)
     if not args.mycorpus and not args.germeval:
-        print("Expected either --mycorpus or --germeval flag")
+        print("Expected --mycorpus")
 
 def test_on_mycorpus(args):
     """Tests on the corpus set in ARTICLES_FILEPATH.
@@ -60,16 +57,6 @@ def test_on_mycorpus(args):
     test_on_articles(args.identifier, load_articles(cfg.ARTICLES_FILEPATH),
                      nb_append=cfg.COUNT_WINDOWS_TEST)
 
-def test_on_germeval(args):
-    """Tests on the germeval corpus.
-    The germeval filepath is defined in GERMEVAL_FILEPATH.
-    See https://sites.google.com/site/germeval2014ner/data .
-
-    Args:
-        args: Command line arguments as parsed by argparse.ArgumentParser.
-    """
-    print("Testing on germeval (%s)..." % (cfg.GERMEVAL_FILEPATH))
-    test_on_articles(args.identifier, load_germeval(cfg.GERMEVAL_FILEPATH))
 
 def test_on_articles(identifier, articles, nb_append=None):
     """Test a trained CRF model on a list of Article objects (annotated text).
