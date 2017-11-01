@@ -6,10 +6,8 @@ This file must be called with the same identifier that was used during training.
 
 Example usage:
     python test.py --identifier="my_experiment" --mycorpus
-    python test.py --identifier="my_experiment" --germeval
 
 The first command tests on the corpus set in ARTICLES_FILEPATH.
-The second command tests on the germeval corpus, whichs path is defined in GERMEVAL_FILEPATH.
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
 import argparse
@@ -36,15 +34,10 @@ def main():
     parser.add_argument("--mycorpus", required=False, action="store_const", const=True,
                         help="Whether to test on your corpus, defined via the constant " \
                              "ARTICLES_FILEPATH.")
-    parser.add_argument("--germeval", required=False, action="store_const", const=True,
-                        help="Whether to test on the german eval 2014 corpus.")
     args = parser.parse_args()
 
     # test on corpus set in ARTICLES_FILEPATH
-    if args.mycorpus:
-        test_on_mycorpus(args)
-    if not args.mycorpus and not args.germeval:
-        print("Expected --mycorpus")
+    test_on_mycorpus(args)
 
 def test_on_mycorpus(args):
     """Tests on the corpus set in ARTICLES_FILEPATH.
