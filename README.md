@@ -52,10 +52,13 @@ Notice the `/MISC` labels.
 6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
 7. Run `python2 train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`.
 8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000). 
+9. Application 1: statistics on fetched data and do sentiment statistics.
+Run `python2 questions_stats.py`.
+10. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
 
 # Score
 
-Results on the Germeval 2014 NER corpus:
+Results on our annotated corpus:
 
                     | precision |   recall | f1-score |  support
               **O** |      0.97 |     1.00 |     0.98 |    23487
