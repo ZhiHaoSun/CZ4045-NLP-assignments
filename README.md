@@ -30,6 +30,7 @@ Run `pip2 install -r requirements.txt` to handle all dependency issues.
 * [scikit-learn](http://scikit-learn.org/stable/) (used in test to generate classification reports)
 * shelve (should be part of python)
 * [nltk](http://www.nltk.org/) (used for its wrapper of the stanford pos tagger)
+* [Stanford CoreNLP](http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip) (used for parsing sentences)
 
 ## Corpus
 A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities with length > 1 of the form `word/LABEL`.
@@ -49,12 +50,15 @@ Notice the `/MISC` labels.
 3. Prepare annotated data. Data is stored in `source.txt`.
 4. Install all requirements in requirements.txt
 5. (Optional) Change all constants (specifically the filepaths) in `config.py` to match your settings. You will have to change `ARTICLES_FILEPATH` (path to your corpus file), `COUNT_WINDOWS_TRAIN` (number of examples to train on, might be too many for your corpus), `COUNT_WINDOWS_TEST` (number of examples to test on, might be too many for your corpus), `LABELS`.
-6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
+6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus.
 7. Run `python2 train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`.
-8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000). 
-9. Application 1: statistics on fetched data and do sentiment statistics.
-Run `python2 questions_stats.py`.
-10. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
+8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000).
+Generated tokens will be stored in `tokens.txt`.
+9. Run `python2 stemming/stemming.py` to get the frequent words before and after stemming. It should output the top 20 words before stemming and their counts, and top 20 words after stemming with their counts and original words.
+10. Application 1: statistics on fetched data and do sentiment statistics.
+Run `python2 questions_stats.py`. Top frequent sentiment words will be stored in `frequent_senti_words.txt` file.
+11. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
+12. Application 3: Grammar parsing and checking. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python2 parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
 
 12. Application 4: Collocation analysis basing on nltk.collocation kit. Run 'python2 preprocessing/generate_collocation_data.py' to generate collocation matrix.
     Then run 'python -m SimpleHTTPServer 8080', and the visualisation shall be available on 'http://localhost:8080/collocation/stackoverflow.html'
@@ -63,19 +67,21 @@ Run `python2 questions_stats.py`.
 
 Results on our annotated corpus:
 
-                    | precision |   recall | f1-score |  support
-              **O** |      0.97 |     1.00 |     0.98 |    23487
-            **PER** |      0.84 |     0.73 |     0.78 |      525
-    **avg / total** |      0.95 |     0.96 |     0.95 |    25002
+|                    | precision |   recall | f1-score |  support|
+|--------------------|-----------|----------|----------|---------|
+|              **O** |      0.97 |     1.00 |     0.98 |    23487|
+|            **PER** |      0.84 |     0.73 |     0.78 |      525|
+|    **avg / total** |      0.95 |     0.96 |     0.95 |    25002|
 
 *Note:* ~1000 tokens are missing, because they belonged to LOC, ORG or MISC. The CRF model was not really trained on these labels and therefore performed poorly. It was only properly trained on PER.
 
 
 Results on an automatically annotated Wikipedia corpus (therefore some PER labels might have been wrong/missing):
 
-                    | precision |   recall | f1-score |  support
-              **O** |  0.97     | 0.98     | 0.98     | 182952
-            **PER** |  0.88     | 0.85     | 0.87     | 8854
-    **avg / total** |  0.95     | 0.95     | 0.95     | 199239
+|                    | precision |   recall | f1-score |  support|
+|--------------------|-----------|----------|----------|---------|
+|              **O** |  0.97     | 0.98     | 0.98     | 182952  |
+|            **PER** |  0.88     | 0.85     | 0.87     | 8854    |
+|    **avg / total** |  0.95     | 0.95     | 0.95     | 199239  |
 
 *Note:* Same as above, LOC, ORG and MISC were removed from the table.

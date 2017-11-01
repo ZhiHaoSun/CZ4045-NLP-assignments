@@ -1,11 +1,14 @@
+from __future__ import print_function
 import os
 import nltk
 import re
+from io import open
+
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 parent_dir = os.path.split(dir_path)[0]
 filename = os.path.join(parent_dir, 'stackoverflow_content')
-print(filename)
+
 english_stopwords = nltk.corpus.stopwords.words('english')
 english_stopwords.extend(["'m", "'re", "'s", "'ve", "n't"])
 stemmer = nltk.PorterStemmer()

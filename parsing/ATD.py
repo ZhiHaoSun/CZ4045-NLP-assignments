@@ -6,16 +6,17 @@ See http://www.afterthedeadline.com/api.slp for the API documentation.
 Usage example:
 setDefaultKey('your AfterTheDeadline API key')
 errs = checkDocument('your text')
-for error in errors:
-     print("{} error for: {} **{}**".format(error.type, error.precontext, error.string))
-     print("some suggestions: {}".format(", ".join(error.suggestions),))
+for error in errs:
+    print "string: %s" % error.string
+    print "description: %s" % error.description
+    for suggestion in error.suggestions:
+        print "suggestion: %s" % suggestion
 
 Created by Miguel Ventura
-Modified for Python3 by Russell Horton
 License: MIT
 """
-import http.client
-import urllib.parse
+import httplib
+import urllib
 from xml.etree import ElementTree
 
 _key = None
@@ -41,14 +42,14 @@ def checkDocument(text, key=None):
                 'Please provide key as argument or set it using setDefaultKey() first')
         key = _key
 
-    params = urllib.parse.urlencode({
+    params = urllib.urlencode({
         'key': key,
         'data': text,
     })
-    service = http.client.HTTPConnection("service.afterthedeadline.com")
+    service = httplib.HTTPConnection("service.afterthedeadline.com")
     service.request("POST", "/checkDocument", params)
     response = service.getresponse()
-    if response.status != http.client.OK:
+    if response.status <> httplib.OK:
         service.close()
         raise Exception(
             'Unexpected response code from AtD service %d' % response.status)
@@ -106,10 +107,10 @@ def stats(data, key=None):
         'key': key,
         'data': data,
     })
-    service = http.client.HTTPConnection("service.afterthedeadline.com")
+    service = httplib.HTTPConnection("service.afterthedeadline.com")
     service.request("POST", "/stats", params)
     response = service.getresponse()
-    if response.status != http.client.OK:
+    if response.status <> httplib.OK:
         service.close()
         raise Exception(
             'Unexpected response code from AtD service %d' % response.status)
@@ -141,4 +142,4 @@ class Metric:
     @staticmethod
     def filterByKey(metrics, k):
         """Filter a list leaving only Metric objects whose key matches 'k'"""
-        return [m for m in metrics if m.key == t]
+        return [m for m in metrics if m.key == k]
