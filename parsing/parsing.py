@@ -1,5 +1,6 @@
 import hashlib
 import os
+from io import open
 
 import ATD
 from nltk import word_tokenize, sent_tokenize
@@ -14,7 +15,7 @@ ATD.setDefaultKey(key)
 
 parser = CoreNLPParser()
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_path = os.path.dirname(os.path.realpath(__filse__))
 parent_dir = os.path.split(dir_path)[0]
 filename = os.path.join(parent_dir, 'stackoverflow_content')
 

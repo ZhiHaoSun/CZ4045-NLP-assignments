@@ -30,6 +30,7 @@ Run `pip2 install -r requirements.txt` to handle all dependency issues.
 * [scikit-learn](http://scikit-learn.org/stable/) (used in test to generate classification reports)
 * shelve (should be part of python)
 * [nltk](http://www.nltk.org/) (used for its wrapper of the stanford pos tagger)
+* [Stanford CoreNLP](http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip) (used for parsing sentences)
 
 ## Corpus
 A large annotated corpus is required that *(a)* contains one article/document per line, *(b)* is tokenized (e.g. by the stanford parser) and *(c)* contains annotated named entities of the form `word/LABEL`.
@@ -52,24 +53,29 @@ Notice the `/PER` and `/LOC` labels. BIO codes will automatically be normalized 
 6. Run `python -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
 7. Run `python train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`. This will likely run for several hours (it did when tested on 20,000 example windows). Notice that the feature generation will be very slow at the first run, as POS tagging and (to a lesser degree) LDA tagging take a lot of time.
 8. Run `python predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000). This also requires feature generation and will therefore also be slow (at the first run).
+9. Run `python stemming/stemming.py` to get the frequent words before and after stemming. It should output the top 20 words before stemming and their counts, and top 20 words after stemming with their counts and original words.
+10. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
+
 
 # Score
 
 Results on the Germeval 2014 NER corpus:
 
-                    | precision |   recall | f1-score |  support
-              **O** |      0.97 |     1.00 |     0.98 |    23487
-            **PER** |      0.84 |     0.73 |     0.78 |      525
-    **avg / total** |      0.95 |     0.96 |     0.95 |    25002
+|                    | precision |   recall | f1-score |  support|
+|--------------------|-----------|----------|----------|---------|
+|              **O** |      0.97 |     1.00 |     0.98 |    23487|
+|            **PER** |      0.84 |     0.73 |     0.78 |      525|
+|    **avg / total** |      0.95 |     0.96 |     0.95 |    25002|
 
 *Note:* ~1000 tokens are missing, because they belonged to LOC, ORG or MISC. The CRF model was not really trained on these labels and therefore performed poorly. It was only properly trained on PER.
 
 
 Results on an automatically annotated Wikipedia corpus (therefore some PER labels might have been wrong/missing):
 
-                    | precision |   recall | f1-score |  support
-              **O** |  0.97     | 0.98     | 0.98     | 182952
-            **PER** |  0.88     | 0.85     | 0.87     | 8854
-    **avg / total** |  0.95     | 0.95     | 0.95     | 199239
+|                    | precision |   recall | f1-score |  support|
+|--------------------|-----------|----------|----------|---------|
+|              **O** |  0.97     | 0.98     | 0.98     | 182952  |
+|            **PER** |  0.88     | 0.85     | 0.87     | 8854    |
+|    **avg / total** |  0.95     | 0.95     | 0.95     | 199239  |
 
 *Note:* Same as above, LOC, ORG and MISC were removed from the table.
