@@ -1,8 +1,10 @@
 # About
 
-This project is an affiliated coursework for CZ4045 Natural Language Processing in Nanyang Technological University (Singapore).
-The group has gone through the full data processing life cycle using data collected from online forum Stack Overflow, an online forum dedicated to programming related questions and answers.
-The main components of this project are: data collection by self-designed crawler, data analysis and annotation by using stemming followed by POS tagging, tokenizer training and development, further analysis and its applications for sentiment statistics, Shannon generation, grammar parsing & checking, and collocation analysis.
+This project is an affiliated coursework for CZ4045 Natural Language Processing in Nanyang Technological University (Singapore). 
+The group has gone through the full data processing lifecycle using data collected from online forum Stack Overflow, an online forum dedicated to programming related questions and answers.
+The main components of this project are: data collection by the self-designed crawler, data analysis and annotation by using stemming followed by POS tagging, tokenizer training and development, further analysis and its applications for sentiment statistics, Shannon generation, grammar parsing & checking, and collocation analysis.
+Notably, the tokenizer designed and developed by the team is capable to identify irregular name entities such as "European Computer Manufacturer's Association" or "src/main/resources", which greatly improved the accuracy of tokenization, thus enhanced the performance 
+of further analysis.
 
 # Used features
 
