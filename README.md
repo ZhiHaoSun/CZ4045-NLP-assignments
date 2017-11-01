@@ -56,6 +56,9 @@ Notice the `/MISC` labels.
 Run `python2 questions_stats.py`.
 10. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
 
+12. Application 4: Collocation analysis basing on nltk.collocation kit. Run 'python2 preprocessing/generate_collocation_data.py' to generate collocation matrix.
+    Then run 'python -m SimpleHTTPServer 8080', and the visualisation shall be available on 'http://localhost:8080/collocation/stackoverflow.html'
+
 # Score
 
 Results on our annotated corpus:

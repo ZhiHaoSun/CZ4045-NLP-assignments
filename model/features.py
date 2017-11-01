@@ -408,4 +408,4 @@ class POSTagFeature(object):
         Returns:
             List of POS tags as strings.
         """
-        return self.pos_tagger.tag([token.word for token in window.tokens])
+        return self.pos_tagger.tag([token.word for token in window.tokens if len(token.word) > 0])

@@ -68,3 +68,6 @@ LABELS = ["PER", "API", "ORG", "MISC"]
 # parts, e.g. "B-PER" or "I-LOC" will become "PER" and "LOC" if set to True.
 # This happens before checking whether a label is contained in LABELS.
 REMOVE_BIO_ENCODING = True
+
+# Colors for visualisation
+COLOR_LIST = ['#E41A1C', '#FFFF33', '#377EB8', '#FF7F00', '#FF7F00', '#FF7F00', '#FF7F00', '#FF7F00', '#FF7F00', '#999999', '#984EA3', '#984EA3', '#984EA3', '#984EA3', '#984EA3', '#984EA3', '#377EB8', '#377EB8', '#377EB8', '#377EB8']

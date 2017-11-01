@@ -1,3 +1,13 @@
+Three things to remember:
+
+June 2012, jmbertucci comments:
+
+I'm running Windows/MISC 7/MISC 64-bit/MISC and I had the 32-bit/MISC JRE/MISC installed.
+  I downloaded Eclipse/MISC 64-bit/MISC which looks for a 64-bit/MISC JRE/MISC .
+  Because I didn't have the 64-bit/MISC JRE/MISC it threw the error, which makes sense.
+
+They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al.
+
 What's the difference between JavaScript and Java ?
 
 Java and Javascript are similar like Car and Carpet are similar.
@@ -188,12 +198,3 @@ Eclipse will by default try to launch with the default "java.exe" (the first one
 
 They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al.
 
-Three things to remember:
-
-June 2012, jmbertucci comments:
-
-I'm running Windows/MISC 7/MISC 64-bit/MISC and I had the 32-bit/MISC JRE/MISC installed.
-  I downloaded Eclipse/MISC 64-bit/MISC which looks for a 64-bit/MISC JRE/MISC .
-  Because I didn't have the 64-bit/MISC JRE/MISC it threw the error, which makes sense.
-
-They are independent languages with unrelated lineages. Brendan/MISC Eich/MISC created Javascript originally at Netscape. It was initially called Mocha. The choice of Javascript as a name was a nod, if you will, to the then ascendant Java programming language, developed at Sun by Patrick/MISC Naughton/MISC, James/MISC Gosling/MISC , et. al.
