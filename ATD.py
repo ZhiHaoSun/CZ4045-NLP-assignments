@@ -20,10 +20,12 @@ from xml.etree import ElementTree
 
 _key = None
 
+
 def setDefaultKey(key):
     global _key
     _key = key
-    
+
+
 def checkDocument(text, key=None):
     """Invoke checkDocument service with provided text and optional key.
     If no key is provided, a default key is used.
@@ -31,13 +33,14 @@ def checkDocument(text, key=None):
     Returns list of Error objects.
 
     See http://www.afterthedeadline.com/api.slp for more info."""
-    
+
     global _key
     if key is None:
         if _key is None:
-            raise Exception('Please provide key as argument or set it using setDefaultKey() first')
+            raise Exception(
+                'Please provide key as argument or set it using setDefaultKey() first')
         key = _key
-    
+
     params = urllib.parse.urlencode({
         'key': key,
         'data': text,
@@ -47,13 +50,15 @@ def checkDocument(text, key=None):
     response = service.getresponse()
     if response.status != http.client.OK:
         service.close()
-        raise Exception('Unexpected response code from AtD service %d' % response.status)
+        raise Exception(
+            'Unexpected response code from AtD service %d' % response.status)
     e = ElementTree.fromstring(response.read())
     service.close()
     errs = e.findall('message')
     if len(errs) > 0:
         raise Exception('Server returned an error: %s' % errs[0].text)
     return map(lambda err: Error(err), e.findall('error'))
+
 
 class Error:
     """ AtD Error Object
@@ -62,6 +67,7 @@ class Error:
     and suggestions.
 
     Look at http://www.afterthedeadline.com/api.slp for more information."""
+
     def __init__(self, e):
         self.string = e.find('string').text
         self.description = e.find('description').text
@@ -76,8 +82,10 @@ class Error:
                                    e.find('suggestions').findall('option'))
         else:
             self.suggestions = []
+
     def __str__(self):
         return "%s (%s)" % (self.string, self.description)
+
 
 def stats(data, key=None):
     """Invoke stats service with provided text and optional key.
@@ -86,11 +94,12 @@ def stats(data, key=None):
     Returns list of Metric objects.
 
     See http://www.afterthedeadline.com/api.slp for more info."""
-    
+
     global _key
     if key is None:
         if _key is None:
-            raise Exception('Please provide key as argument or set it using setDefaultKey() first')
+            raise Exception(
+                'Please provide key as argument or set it using setDefaultKey() first')
         key = _key
 
     params = urllib.urlencode({
@@ -102,10 +111,12 @@ def stats(data, key=None):
     response = service.getresponse()
     if response.status != http.client.OK:
         service.close()
-        raise Exception('Unexpected response code from AtD service %d' % response.status)
+        raise Exception(
+            'Unexpected response code from AtD service %d' % response.status)
     e = ElementTree.fromstring(response.read())
     service.close()
     return map(lambda metric: Metric(metric), e.findall('metric'))
+
 
 class Metric:
     """ AtD Metric Object
@@ -113,6 +124,7 @@ class Metric:
     Available properties are: type, key and value.
 
     Look at http://www.afterthedeadline.com/api.slp for more information."""
+
     def __init__(self, e):
         self.type = e.find('type').text
         self.key = e.find('key').text
@@ -120,11 +132,12 @@ class Metric:
 
     def __str__(self):
         return "%s(%s:%d)" % (self.type, self.key, self.value)
-    
+
     @staticmethod
     def filterByType(metrics, t):
         """Filter a list leaving only Metric objects whose type matches 't'"""
         return [m for m in metrics if m.type == t]
+
     @staticmethod
     def filterByKey(metrics, k):
         """Filter a list leaving only Metric objects whose key matches 'k'"""
