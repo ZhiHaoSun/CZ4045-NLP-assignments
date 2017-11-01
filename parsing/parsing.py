@@ -1,4 +1,5 @@
 import hashlib
+import os
 
 import ATD
 from nltk import word_tokenize, sent_tokenize
@@ -12,6 +13,10 @@ key = h.hexdigest()
 ATD.setDefaultKey(key)
 
 parser = CoreNLPParser()
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.split(dir_path)[0]
+filename = os.path.join(parent_dir, 'stackoverflow_content')
 
 
 def get_valid_filename(s):
@@ -28,7 +33,7 @@ def correct(line, errors):
     return correct_line
 
 
-with open('stackoverflow_content', encoding='utf-8') as f:
+with open(filename, encoding='utf-8') as f:
     file_content = f.read().replace('\n', '')
     file_content = ' '.join(file_content.split())
     lines = sent_tokenize(file_content)
