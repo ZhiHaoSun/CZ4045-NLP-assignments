@@ -111,13 +111,20 @@ def test_on_articles(identifier, articles, nb_append=None):
         else:
             result_tokens.append(result[i][0])
             i = i + 1
-    # result_tokens = nltk.pos_tag(result_tokens)
     with open('tokens.txt', 'w') as f:
         for token in result_tokens:
             try:
                 f.write(token + '\n')
             except Exception:
                 print(token)
+    # result_tokens = nltk.pos_tag(result_tokens)
+    # with open('tags.txt', 'w') as f:
+    #     for token in result_tokens:
+    #         try:
+    #             f.write(str(token) + '\n')
+    #         except Exception:
+    #             print(token)
+
 
     # print classification report (precision, recall, f1)
     print(bio_classification_report(correct_label_chains, predicted_label_chains))

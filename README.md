@@ -59,8 +59,7 @@ Generated tokens will be stored in `tokens.txt`.
 Run `python2 questions_stats.py`. Top frequent sentiment words will be stored in `frequent_senti_words.txt` file.
 11. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
 12. Application 3: Grammar parsing and checking. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python2 parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
-
-12. Application 4: Collocation analysis basing on nltk.collocation kit. Run 'python2 preprocessing/generate_collocation_data.py' to generate collocation matrix.
+13. Application 4: Collocation analysis basing on nltk.collocation kit. Run 'python2 preprocessing/generate_collocation_data.py' to generate collocation matrix.
     Then run 'python -m SimpleHTTPServer 8080', and the visualisation shall be available on 'http://localhost:8080/collocation/stackoverflow.html'
 
 # Score
@@ -69,19 +68,6 @@ Results on our annotated corpus:
 
 |                    | precision |   recall | f1-score |  support|
 |--------------------|-----------|----------|----------|---------|
-|              **O** |      0.97 |     1.00 |     0.98 |    23487|
-|            **PER** |      0.84 |     0.73 |     0.78 |      525|
-|    **avg / total** |      0.95 |     0.96 |     0.95 |    25002|
-
-*Note:* ~1000 tokens are missing, because they belonged to LOC, ORG or MISC. The CRF model was not really trained on these labels and therefore performed poorly. It was only properly trained on PER.
-
-
-Results on an automatically annotated Wikipedia corpus (therefore some PER labels might have been wrong/missing):
-
-|                    | precision |   recall | f1-score |  support|
-|--------------------|-----------|----------|----------|---------|
-|              **O** |  0.97     | 0.98     | 0.98     | 182952  |
-|            **PER** |  0.88     | 0.85     | 0.87     | 8854    |
-|    **avg / total** |  0.95     | 0.95     | 0.95     | 199239  |
-
-*Note:* Same as above, LOC, ORG and MISC were removed from the table.
+|              **O** |      0.90 |     0.94 |     0.92 |       50|
+|           **MISC** |      0.73 |     0.62 |     0.67 |       13|
+|    **avg / total** |      0.95 |     0.96 |     0.95 |       63|

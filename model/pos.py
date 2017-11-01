@@ -43,8 +43,8 @@ class PosTagger(object):
                 self.cache[_hash] = tagged
                 if random.randint(1, 100) <= self.cache_synch_prob:
                     self.synchronize_cache()
-
                 return tagged
+
 
     def tag_uncached(self, tokens):
         """Annotate a list of strings with their POS tags without querying the cache.
