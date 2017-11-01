@@ -11,14 +11,12 @@ comments
 I
 'm
 running
-Windows 7
-64-bit
+Windows 7 64-bit
 and
 I
 had
 the
-32-bit
-JRE
+32-bit JRE
 installed
 .
 I
@@ -36,8 +34,7 @@ did
 n't
 have
 the
-64-bit
-JRE
+64-bit JRE
 it
 threw
 the
@@ -87,9 +84,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -184,9 +179,7 @@ a
 look
 at
 the
-Wikipedia
-link
-JavaScript
+Wikipedia link JavaScript
 ,
 despite
 the
@@ -197,9 +190,7 @@ essentially
 unrelated
 to
 the
-Java
-programming
-language
+Java programming language
 ,
 although
 both
@@ -358,8 +349,7 @@ libraries
 ,
 and
 virtual
-machine
-platform
+machine platform
 that
 allows
 you
@@ -444,8 +434,7 @@ so
 Both
 have
 a
-C-like
-syntax
+C-like syntax
 ,
 are
 object-oriented
@@ -513,8 +502,7 @@ is
 their
 last
 common
-ancestor
-language
+ancestor language
 .
 In
 addittion
@@ -593,9 +581,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -756,8 +742,7 @@ Java
 was
 created
 at
-Sun
-Microsystems
+Sun Microsystems
 now
 Oracle
 .
@@ -787,8 +772,7 @@ a
 trademark
 licensed
 from
-Sun
-Microsystems
+Sun Microsystems
 used
 to
 describe
@@ -890,7 +874,8 @@ all
 PCs
 have
 a
-Java VM installed
+Java VM
+installed
 .
 A
 Re-Introduction
@@ -909,8 +894,7 @@ it
 I
 have
 a
-JPanel
-with
+JPanel with
 a
 painted
 background
@@ -1443,9 +1427,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -1505,7 +1487,8 @@ Netbeans
 '
 unfortunate
 auto-generated
-processRequest method
+processRequest
+method
 .
 This
 makes
@@ -1632,7 +1615,8 @@ in
 a
 table
 .
-Also view/edit
+Also
+view/edit
 detail
 links
 as
@@ -1707,7 +1691,8 @@ result
 as
 after
 the
-form submit
+form
+submit
 .
 Such
 an
@@ -1961,9 +1946,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -2328,9 +2311,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -2463,8 +2444,7 @@ let
 's
 say
 ,
-MyType
-just
+MyType just
 an
 example
 and
@@ -2684,9 +2664,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -3068,8 +3046,7 @@ a
 parent
 of
 the
-String
-class
+String class
 and
 the
 compiler
@@ -3203,9 +3180,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
@@ -3272,7 +3247,8 @@ is
 the
 need
 of
-type casting
+type
+casting
 ?
 ?
 I
@@ -3306,8 +3282,7 @@ this
 error
 :
 A
-Java Runtime Environment
-JRE
+Java Runtime Environment JRE
 or
 Java Development Kit
 JDK
@@ -3376,9 +3351,7 @@ run
 any
 of
 the
-ipconfig
-/
-tracert
+ipconfig / tracert
 /
 or
 ping
@@ -3441,9 +3414,7 @@ to
 the
 then
 ascendant
-Java
-programming
-language
+Java programming language
 ,
 developed
 at
