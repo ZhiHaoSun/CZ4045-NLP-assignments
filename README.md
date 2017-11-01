@@ -56,21 +56,19 @@ You will also need [word2vec](https://code.google.com/p/word2vec/) clusters (can
 
 Results on the Germeval 2014 NER corpus:
 
-                | precision |   recall | f1-score |  support
-----------------|-----------|----------|----------|----------
-          **O** |      0.97 |     1.00 |     0.98 |    23487
-        **PER** |      0.84 |     0.73 |     0.78 |      525
-**avg / total** |      0.95 |     0.96 |     0.95 |    25002
+                    | precision |   recall | f1-score |  support
+              **O** |      0.97 |     1.00 |     0.98 |    23487
+            **PER** |      0.84 |     0.73 |     0.78 |      525
+    **avg / total** |      0.95 |     0.96 |     0.95 |    25002
 
 *Note:* ~1000 tokens are missing, because they belonged to LOC, ORG or MISC. The CRF model was not really trained on these labels and therefore performed poorly. It was only properly trained on PER.
 
 
 Results on an automatically annotated Wikipedia corpus (therefore some PER labels might have been wrong/missing):
 
-                | precision |   recall | f1-score |  support
-----------------|-----------|----------|----------|----------
-          **O** |  0.97     | 0.98     | 0.98     | 182952
-        **PER** |  0.88     | 0.85     | 0.87     | 8854
-**avg / total** |  0.95     | 0.95     | 0.95     | 199239
+                    | precision |   recall | f1-score |  support
+              **O** |  0.97     | 0.98     | 0.98     | 182952
+            **PER** |  0.88     | 0.85     | 0.87     | 8854
+    **avg / total** |  0.95     | 0.95     | 0.95     | 199239
 
 *Note:* Same as above, LOC, ORG and MISC were removed from the table.
