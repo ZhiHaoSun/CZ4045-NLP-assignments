@@ -54,11 +54,11 @@ Notice the `/MISC` labels.
 7. Run `python2 train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`.
 8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000).
 Generated tokens will be stored in `tokens.txt`.
-9. Run `python stemming/stemming.py` to get the frequent words before and after stemming. It should output the top 20 words before stemming and their counts, and top 20 words after stemming with their counts and original words.
+9. Run `python2 stemming/stemming.py` to get the frequent words before and after stemming. It should output the top 20 words before stemming and their counts, and top 20 words after stemming with their counts and original words.
 10. Application 1: statistics on fetched data and do sentiment statistics.
 Run `python2 questions_stats.py`. Top frequent sentiment words will be stored in `frequent_senti_words.txt` file.
 11. Application 2: Shannon Generation based on NGram model. Run `python2 generate.py`. Sentences of length 20 with starting words "I like" will be generated. This may need to wait several minutes.
-12. Application 3: Grammar parsing and checking. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
+12. Application 3: Grammar parsing and checking. Start the [CoreNLP server](https://stanfordnlp.github.io/CoreNLP/corenlp-server.html). Run `python2 parsing/parsing.py` to check the grammar of the dataset. It should print each sentence in the dataset as well as their grammatical errors (if any). It will also generate `.ps` files for some of the sentences. These are descriptions of the parse tree and by converting them to `.png` files one will get the image file containing the parse tree of the sentence. Only parse tress for the first 5 sentences with 10 tokens will be generated.
 
 # Score
 
