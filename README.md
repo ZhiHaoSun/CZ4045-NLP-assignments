@@ -50,7 +50,7 @@ Notice the `/MISC` labels.
 3. Prepare annotated data. Data is stored in `source.txt`.
 4. Install all requirements in requirements.txt
 5. (Optional) Change all constants (specifically the filepaths) in `config.py` to match your settings. You will have to change `ARTICLES_FILEPATH` (path to your corpus file), `COUNT_WINDOWS_TRAIN` (number of examples to train on, might be too many for your corpus), `COUNT_WINDOWS_TEST` (number of examples to test on, might be too many for your corpus), `LABELS`.
-6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus. This will take 2 hours or so, especially if your corpus is large.
+6. Run `python2 -m preprocessing/collect_unigrams` to create lists of unigrams for your corpus.
 7. Run `python2 train.py --identifier="my_experiment"` to train a CRF model with name `my_experiment`.
 8. Run `python2 predict.py --identifier="my_experiment"` to test your trained CRF model on an excerpt of your corpus (by default on windows 0 to 4,000, while training happens on windows 4,000 to 24,000).
 Generated tokens will be stored in `tokens.txt`.
